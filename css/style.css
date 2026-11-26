@@ -1,0 +1,562 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E LAYOUT
+   ========================================================================== */
+
+/* Define o estilo global do corpo da página (body) */
+body {
+    /* Define a cor de fundo da página inteira (cinza azulado claro) */
+    background-color: #edf0e8;
+
+    /* Define a família de fontes para uma leitura limpa e sem serifa */
+    font-family: Arial, sans-serif;
+
+    /* Define a cor padrão dos textos para um cinza escuro, evitando o preto puro */
+    color: #2b3440;
+
+    /* Aumenta o espaço entre as linhas para facilitar a leitura dos textos */
+    line-height: 1.6;
+
+    /* Remove as margens e preenchimentos padrão do navegador */
+    margin: 0;
+    padding: 0;
+}
+
+/* Agrupa o conteúdo principal dentro de um bloco centralizado */
+main {
+    /* Limita a largura máxima do conteúdo a 960 pixels em telas grandes */
+    max-width: 960px;
+
+    /* Centraliza o elemento horizontalmente (0 em cima/baixo, auto nas laterais) */
+    margin: 25px auto;
+
+    /* Adiciona um espaço interno nas laterais para telas pequenas (smartphones) */
+    padding: 0 20px;
+}
+
+/* Transforma cada seção em um "card" branco, separado das demais */
+section {
+    background-color: #ffffff;
+    padding: 20px 28px 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+
+    /* Sombra suave ao redor do card */
+    box-shadow: 0 2px 10px rgba(27, 47, 75, 0.12);
+}
+
+/* Títulos de seção com uma linha laranja embaixo */
+h2 {
+    color: #1b2f4b;
+    border-bottom: 3px solid #04f308;
+    padding-bottom: 8px;
+}
+
+/* Subtítulos dentro das seções */
+h3 {
+    color: #1a5276;
+    margin-top: 25px;
+}
+
+
+/* ==========================================================================
+   2. ESTILIZAÇÃO DAS IMAGENS DO PAINEL
+   ========================================================================== */
+
+/* Controla o tamanho do logotipo exibido no cabeçalho */
+.logo-cabecalho {
+    /* Garante que o logo não ultrapasse 130px de largura */
+    max-width: 130px;
+
+    /* Mantém a proporção original da imagem */
+    height: auto;
+}
+
+/* Centraliza a figura (imagem + legenda) dentro da seção */
+figure {
+    margin: 25px 0 0;
+    text-align: center;
+}
+
+/* Transforma a imagem do gráfico em um "card" destacado */
+.grafico-destaque {
+    /* Permite que o gráfico ocupe até 85% da largura do contêiner pai */
+    max-width: 85%;
+
+    /* Mantém a proporção de altura automática sem distorcer a imagem */
+    height: auto;
+
+    /* Arredonda as 4 pontas da imagem em 12 pixels */
+    border-radius: 12px;
+
+    /* Aplica uma sombra suave atrás do gráfico: deslocamento X/Y, desfoque e cor com transparência */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Legenda que fica logo abaixo da imagem do gráfico */
+figcaption {
+    margin-top: 12px;
+    font-size: 0.9em;
+    font-style: italic;
+    color: #5a6775;
+}
+
+/* Padroniza os pequenos ícones de status dentro da tabela */
+.icone-status {
+    /* Força uma dimensão fixa pequena de 16x16 pixels para o ícone */
+    width: 16px;
+    height: 16px;
+
+    /* Alinha o centro do ícone na mesma altura do texto ao lado */
+    vertical-align: middle;
+
+    /* Cria um espaço de 8 pixels entre o ícone e a palavra do status */
+    margin-right: 8px;
+}
+
+
+/* ==========================================================================
+   3. ESTILIZAÇÃO DAS TABELAS
+   ========================================================================== */
+
+/* Caixa que permite rolar a tabela na horizontal em telas pequenas */
+.tabela-rolagem {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+/* Configuração do contêiner principal das tabelas */
+.tabela-com-bordas {
+    /* Elimina os espaços duplos entre as bordas das células vizinhas */
+    border-collapse: collapse;
+
+    /* Define o fundo branco para destacar a tabela do fundo do card */
+    background-color: #ffffff;
+
+    /* Faz a tabela ocupar toda a largura do elemento pai */
+    width: 100%;
+
+    /* Sombra bem leve ao redor de toda a tabela */
+    box-shadow: 0 4px 12px rgba(27, 47, 75, 0.15);
+}
+
+/* Título da tabela (elemento caption), exibido acima dela */
+.tabela-com-bordas caption {
+    caption-side: top;
+    text-align: left;
+    font-weight: bold;
+    color: #1b2f4b;
+    padding-bottom: 10px;
+}
+
+/* Formatação das células de cabeçalho (th) e de dados (td) */
+.tabela-com-bordas th,
+.tabela-com-bordas td {
+    /* Define uma borda fina e clara entre as células */
+    border: 1px solid #c5d3e0;
+
+    /* Espaçamento interno: 12px acima/abaixo e 15px nas laterais para legibilidade */
+    padding: 12px 15px;
+
+    /* Alinha todo o texto do conteúdo à esquerda */
+    text-align: left;
+
+    /* Alinha o conteúdo ao topo da célula (útil nas células com listas) */
+    vertical-align: top;
+}
+
+/* Destaque exclusivo para a linha de cabeçalho da tabela */
+.tabela-com-bordas thead th {
+    /* Fundo azul escuro para diferenciar dos dados comuns */
+    background-color: #034919;
+
+    /* Cor do texto em branco para dar contraste sobre o fundo escuro */
+    color: #ffffff;
+}
+
+/* Células de título de linha (primeira coluna) e linha de total */
+.tabela-com-bordas tbody th,
+.tabela-com-bordas tfoot th {
+    background-color: #b1f0b0;
+    color: #1b2f4b;
+}
+
+/* Linha de total no rodapé da tabela */
+.tabela-com-bordas tfoot td {
+    background-color: #f0f4f8;
+    font-weight: bold;
+}
+
+/* Zebrado: linhas pares do corpo da tabela ganham um fundo diferente */
+.tabela-com-bordas tbody tr:nth-child(even) td {
+    background-color: #f5f9fc;
+}
+
+/* Destaca a linha sobre a qual o mouse está passando */
+.tabela-com-bordas tbody tr:hover td {
+    background-color: #04f308;
+}
+
+/* Ajusta o recuo e as margens das listas que ficam dentro das células */
+.tabela-com-bordas td ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+/* Grade de horários: colunas de mesma largura e largura mínima para telas pequenas */
+.tabela-horarios {
+    /* Faz o navegador dividir a largura igualmente entre as colunas dos dias */
+    table-layout: fixed;
+    min-width: 640px;
+}
+
+/* Primeira coluna (horários) com largura fixa, sem quebrar o texto em duas linhas */
+.tabela-horarios thead th:first-child {
+    width: 150px;
+}
+
+.tabela-horarios tbody th {
+    white-space: nowrap;
+}
+
+/* Grade de horários: centraliza o texto das células */
+.tabela-horarios td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Aula que ocupa dois horários seguidos (rowspan) */
+.tabela-horarios .aula-dupla {
+    background-color: #c8ff01;
+    font-weight: bold;
+}
+
+/* Horários sem aula fixa, disponíveis para reserva */
+.tabela-horarios .horario-livre {
+    background-color: #dff3e6;
+    color: #1f6b3d;
+    font-style: italic;
+}
+
+
+/* ==========================================================================
+   4. TEXTOS E LISTAS
+   ========================================================================== */
+
+/* Destaque de trechos importantes com o marca-texto amarelo */
+mark {
+    background-color: #04f308;
+    padding: 0 4px;
+    border-radius: 3px;
+}
+
+/* Termos de código (como os números das salas) em fonte monoespaçada */
+code {
+    background-color: #eef3f8;
+    color: #711380;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+/* Dá um respiro entre os itens das listas */
+li {
+    margin-bottom: 6px;
+}
+
+/* Perguntas frequentes: caixa que abre e fecha ao clicar */
+details {
+    border: 1px solid #c5d3e0;
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+}
+.summary-cor1:hover{
+    background-color: #04f308
+}
+.summary-cor2:hover{
+    background-color: #c3b305
+}
+.summary-cor3:hover{
+    background-color: #e83605
+}
+/* Pergunta (parte sempre visível da caixa) */
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #1a5276;
+}
+
+/* Lista de números principais exibida como cartões lado a lado */
+.cartoes-resumo {
+    /* Remove os marcadores e o recuo padrão da lista */
+    list-style: none;
+    padding: 0;
+    margin: 25px 0 0;
+
+    /* Coloca os itens lado a lado, com 15px de espaço entre eles */
+    display: flex;
+    gap: 15px;
+}
+
+/* Cada cartão da lista ocupa uma parte igual da largura */
+.cartoes-resumo li {
+    flex: 1;
+    text-align: center;
+    background-color: #f5f9fc;
+    border-top: 4px solid #04f308;
+    border-radius: 6px;
+    padding: 15px 10px;
+    margin-bottom: 0;
+}
+
+/* Número grande dentro do cartão */
+.cartoes-resumo strong {
+    display: block;
+    font-size: 2em;
+    color: #1b2f4b;
+}
+
+
+/* ==========================================================================
+   5. ESTILIZAÇÃO DO FORMULÁRIO
+   ========================================================================== */
+
+/* Agrupamento de campos com borda e título (legend) */
+fieldset {
+    border: 1px solid #c5d3e0;
+    border-radius: 8px;
+    margin: 0 0 20px;
+    padding: 10px 20px 15px;
+}
+
+/* Título de cada grupo de campos */
+legend {
+    font-weight: bold;
+    color: #1b2f4b;
+    padding: 0 8px;
+}
+
+/* Espaço entre um campo e o seguinte */
+.campo {
+    margin-bottom: 15px;
+}
+
+/* Coloca dois campos lado a lado */
+.linha-campos {
+    display: flex;
+    gap: 20px;
+}
+
+/* Cada campo da linha ocupa metade da largura */
+.linha-campos .campo {
+    flex: 1;
+}
+
+/* Rótulos dos campos, sempre acima do campo */
+label,
+.rotulo-grupo {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Asterisco que indica campo obrigatório */
+.obrigatorio {
+    color: #04f308;
+}
+
+/* Campos de texto, e-mail, telefone, data, número, seleção e área de texto */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    /* Faz o campo ocupar toda a largura disponível, contando borda e espaço interno */
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 9px 10px;
+    border: 1px solid #9fb2c4;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+}
+
+/* Destaque do campo que está sendo preenchido */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #94eb8b;
+    border-color: #04f308;
+}
+
+/* Opções de radio e checkbox: uma por linha, sem negrito */
+.opcao {
+    font-weight: normal;
+    margin-bottom: 3px;
+}
+
+/* Botões do formulário */
+button {
+    background-color: #1b2f4b;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 28px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* Botão muda de cor quando o mouse passa por cima */
+button:hover {
+    background-color: #04f308;
+}
+
+/* Botão "Limpar", com aparência mais discreta */
+.botao-secundario {
+    background-color: #ffffff;
+    color: #1b2f4b;
+    border: 1px solid #1b2f4b;
+    margin-left: 10px;
+}
+
+/* Caixa com a resposta da consulta (preenchida pelo JavaScript) */
+.resultado {
+    margin-top: 20px;
+    padding: 12px 18px;
+    border-radius: 6px;
+
+    /* Respeita as quebras de linha escritas no texto do JavaScript */
+    white-space: pre-line;
+}
+
+/* Esconde a caixa enquanto ela estiver vazia */
+.resultado:empty {
+    display: none;
+}
+
+/* Resposta de sucesso (verde) */
+.resultado-sucesso {
+    background-color: #dff3e6;
+    border-left: 5px solid #2e9e5b;
+    color: #1f6b3d;
+}
+
+/* Resposta de erro (vermelha) */
+.resultado-erro {
+    background-color: #fbe3e3;
+    border-left: 5px solid #d64545;
+    color: #8f2a2a;
+}
+
+
+/* ==========================================================================
+   6. ESTRUTURA VISUAL DE NAVEGAÇÃO E AVISOS
+   ========================================================================== */
+
+/* Bloco superior do cabeçalho, com fundo branco para combinar com o logo */
+.cabecalho-topo {
+    background-color: #ffffff;
+    border-bottom: 5px solid #04f308;
+
+    /* Coloca o logo e o título lado a lado, centralizados */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+/* Título principal da página, dentro do cabeçalho */
+.cabecalho-topo h1 {
+    margin: 0;
+    color: #1b2f4b;
+    font-size: 1.8em;
+}
+
+/* Frase de apoio abaixo do título */
+.subtitulo {
+    margin: 5px 0 0;
+    color: #5a6775;
+}
+
+/* Barra de navegação azul escura */
+nav {
+    background-color: #1b2f4b;
+    text-align: center;
+    padding: 12px 10px;
+
+    /* Linha de sombra suave separando o topo do restante da página */
+    box-shadow: 0 6px 14px rgba(27, 47, 75, 0.3);
+}
+
+/* Links do menu de navegação no cabeçalho */
+nav a {
+    margin: 0 10px;
+    color: #ffffff;
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    font-weight: bold;      /* Deixa o texto do link em negrito */
+}
+
+/* Link muda de cor quando o mouse passa por cima */
+nav a:hover {
+    color: #04f308;
+}
+
+/* Caixa lateral de aviso destacada */
+.aviso-caixa {
+    /* Fundo amarelo claro para atrair atenção sem ser agressivo */
+    background-color: #94eb8b;
+
+    /* Borda espessa apenas no lado esquerdo criando uma barra de destaque */
+    border-left: 5px solid #04f308;
+
+    padding: 10px 20px;
+    margin-top: 30px;
+    border-radius: 4px;
+}
+
+/* Remove a linha laranja do título dentro da caixa de aviso */
+.aviso-caixa h2 {
+    border-bottom: none;
+}
+
+/* Rodapé no fim do documento */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #1a5276;
+    color: #ffffff;
+}
+
+/* Remove o espaço extra entre as linhas do rodapé */
+footer p {
+    margin: 4px 0;
+}
+
+
+/* ==========================================================================
+   7. TELAS PEQUENAS (SMARTPHONES)
+   ========================================================================== */
+
+/* As regras abaixo só valem quando a tela tem até 600 pixels de largura */
+@media (max-width: 600px) {
+    /* Empilha o logo e o título do cabeçalho */
+    .cabecalho-topo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Empilha os cartões de resumo e os campos lado a lado do formulário */
+    .cartoes-resumo,
+    .linha-campos {
+        flex-direction: column;
+    }
+
+    /* Reduz o espaço interno dos cards para ganhar área de leitura */
+    section {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal dos Laboratórios de Informática</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="cabecalho-topo">
+            <img src="./assets/logo.jpg" alt="Logo do CEUNSP" class="logo-cabecalho">
+            <div>
+                <h1>Portal dos Laboratórios de Informática</h1>
+                <p class="subtitulo">Situação, horários, equipamentos e reservas dos laboratórios do curso de Front-End</p>
+            </div>
+        </div>
+        <nav>
+            <a href="#resumo">Resumo</a>
+            <a href="#laboratorios">Laboratórios</a>
+            <a href="#horarios">Horários</a>
+            <a href="#equipamentos">Equipamentos</a>
+            <a href="#regras">Regras</a>
+            <a href="#consulta">Consulta</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==================== 1. RESUMO ==================== -->
+        <section id="resumo">
+            <h2>Resumo do dia</h2>
+            <p>
+                Os <strong>três laboratórios de informática</strong> do CEUNSP atendem os cursos de tecnologia no período noturno e aos sábados.
+                Hoje, o Laboratório 101 está <em>livre</em>, o 102 está <em>ocupado</em> e o 103 segue <em>em manutenção</em>.
+            </p>
+            <p>
+                Use este painel para conferir a situação de cada sala, consultar a grade de horários e os equipamentos disponíveis,
+                ler as regras de uso e, por fim, <mark>consultar uma reserva</mark> pelo formulário no final da página.
+            </p>
+
+            <!-- Lista com os números principais, estilizada como "cartões" -->
+            <ul class="cartoes-resumo">
+                <li><strong>3</strong> laboratórios</li>
+                <li><strong>95</strong> lugares no total</li>
+                <li><strong>35%</strong> de ocupação média</li>
+            </ul>
+
+            <!-- Imagem do gráfico com legenda -->
+            <figure>
+                <img src="./assets/painel.png" alt="Gráfico de barras da ocupação atual dos laboratórios: Lab 101 com 15%, Lab 102 com 90% e Lab 103 com 0%" class="grafico-destaque">
+                <figcaption>Figura 1 – Ocupação atual de cada laboratório (em %)</figcaption>
+            </figure>
+        </section>
+
+        <!-- ==================== 2. TABELA DE SITUAÇÃO ==================== -->
+        <section id="laboratorios">
+            <h2>Situação dos Laboratórios</h2>
+            <p>
+                A tabela abaixo mostra a localização, a capacidade e a situação de cada laboratório.
+                A coluna <strong>Ocupação</strong> corresponde ao gráfico da Figura 1.
+            </p>
+
+            <div class="tabela-rolagem">
+                <table class="tabela-com-bordas">
+                    <caption>Capacidade e situação atual dos laboratórios</caption>
+                    <thead>
+                        <tr>
+                            <th>Laboratório</th>
+                            <th>Localização</th>
+                            <th>Capacidade</th>
+                            <th>Ocupação</th>
+                            <th>Situação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Laboratório 101</td>
+                            <td>Bloco A, 1º andar</td>
+                            <td>30 alunos</td>
+                            <td>15%</td>
+                            <!-- Ícones de status: alt vazio porque o texto ao lado já descreve a imagem -->
+                            <td><img src="./assets/icone-livre.svg" alt="" class="icone-status">Livre</td>
+                        </tr>
+                        <tr>
+                            <td>Laboratório 102</td>
+                            <td>Bloco A, 2º andar</td>
+                            <td>25 alunos</td>
+                            <td>90%</td>
+                            <td><img src="./assets/icone-ocupado.svg" alt="" class="icone-status">Ocupado</td>
+                        </tr>
+                        <tr>
+                            <td>Laboratório 103</td>
+                            <td>Bloco B, térreo</td>
+                            <td>40 alunos</td>
+                            <td>0%</td>
+                            <td><img src="./assets/icone-manutencao.svg" alt="" class="icone-status">Em manutenção</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <!-- colspan="2": a célula ocupa o espaço de duas colunas -->
+                            <th colspan="2">Total geral</th>
+                            <td>95 alunos</td>
+                            <td>35% (média)</td>
+                            <td>1 livre, 1 ocupado, 1 em manutenção</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <h3>Legenda dos status</h3>
+            <ul>
+                <li><strong>Livre:</strong> sala disponível para uso e para novas reservas.</li>
+                <li><strong>Ocupado:</strong> aula em andamento ou reserva já confirmada para este horário.</li>
+                <li><strong>Em manutenção:</strong> sala fechada para reparos; não aceita reservas.</li>
+            </ul>
+        </section>
+
+        <!-- ==================== 3. GRADE DE HORÁRIOS ==================== -->
+        <section id="horarios">
+            <h2>Grade de Horários</h2>
+            <p>
+                A grade abaixo mostra as aulas fixas do <strong>Laboratório 101</strong> no turno da noite.
+                Os horários marcados como <em>Livre</em> podem receber reservas de outros cursos e de projetos de extensão.
+            </p>
+
+            <div class="tabela-rolagem">
+                <table class="tabela-com-bordas tabela-horarios">
+                    <caption>Grade semanal do Laboratório 101 (turno da noite)</caption>
+                    <thead>
+                        <tr>
+                            <th>Horário</th>
+                            <th>Segunda</th>
+                            <th>Terça</th>
+                            <th>Quarta</th>
+                            <th>Quinta</th>
+                            <th>Sexta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">19h00 – 20h40</th>
+                            <td>Lógica de Programação</td>
+                            <td>Banco de Dados</td>
+                            <!-- rowspan="2": a célula ocupa duas linhas (os dois horários) -->
+                            <td rowspan="2" class="aula-dupla">Projeto Integrador</td>
+                            <td>Front-End I</td>
+                            <td rowspan="2" class="horario-livre">Livre</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">20h50 – 22h30</th>
+                            <td>Algoritmos</td>
+                            <td>Redes de Computadores</td>
+                            <td>Front-End I</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row">Sábado</th>
+                            <td colspan="5" class="horario-livre">Das 8h às 12h: livre para oficinas, provas e reservas especiais</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <!-- ==================== 4. EQUIPAMENTOS ==================== -->
+        <section id="equipamentos">
+            <h2>Equipamentos e Softwares</h2>
+            <p>
+                Cada laboratório tem uma configuração própria. Antes de reservar, confira se os programas que você vai usar
+                estão instalados na sala escolhida. Para pedir a instalação de um novo programa, procure a equipe de
+                <abbr title="Tecnologia da Informação">TI</abbr> com pelo menos <strong>5 dias úteis</strong> de antecedência.
+            </p>
+
+            <div class="tabela-rolagem">
+                <table class="tabela-com-bordas">
+                    <caption>Configuração dos computadores e softwares instalados</caption>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Laboratório 101</th>
+                            <th>Laboratório 102</th>
+                            <th>Laboratório 103</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Computadores</th>
+                            <td>30</td>
+                            <td>25</td>
+                            <td>40 (12 em reparo)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Processador</th>
+                            <td>Intel Core i5</td>
+                            <td>Intel Core i5</td>
+                            <td>Intel Core i7</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Memória RAM</th>
+                            <td>8 GB</td>
+                            <td>8 GB</td>
+                            <td>16 GB</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sistema operacional</th>
+                            <td>Windows 11</td>
+                            <td>Windows 11</td>
+                            <td>Windows 11 e Ubuntu</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Projetor multimídia</th>
+                            <td>Sim</td>
+                            <td>Sim</td>
+                            <td>Em manutenção</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Softwares instalados</th>
+                            <td>
+                                <ul>
+                                    <li>Visual Studio Code</li>
+                                    <li>Google Chrome</li>
+                                    <li>Git</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Visual Studio Code</li>
+                                    <li>Node.js</li>
+                                    <li>Git</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Cisco Packet Tracer</li>
+                                    <li>VirtualBox</li>
+                                    <li>Wireshark</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ==================== 5. REGRAS DE USO ==================== -->
+        <section id="regras">
+            <h2>Regras de Uso</h2>
+            <p>
+                O uso dos laboratórios é <strong>gratuito</strong> para alunos e professores, mas depende do cumprimento das regras abaixo.
+                Elas existem para que todos encontrem a sala e os equipamentos em boas condições.
+            </p>
+
+            <h3>Antes de usar o laboratório</h3>
+            <ol>
+                <li>Solicite a reserva com <strong>48 horas</strong> de antecedência, pelo formulário desta página.</li>
+                <li>Aguarde a confirmação enviada para o seu e-mail institucional.</li>
+                <li>Chegue com 10 minutos de antecedência e apresente a carteirinha ao técnico responsável.</li>
+                <li>Confira se o computador liga e se os programas necessários estão instalados.</li>
+            </ol>
+
+            <h3>Durante o uso</h3>
+            <ul>
+                <li>Não é permitido comer ou beber dentro do laboratório.</li>
+                <li>Não instale nem remova programas sem autorização da equipe de TI.</li>
+                <li>Avise o técnico imediatamente se algum equipamento apresentar defeito.</li>
+                <li>Ao terminar, salve seus arquivos em um pendrive ou na nuvem e encerre a sessão.</li>
+            </ul>
+
+            <h3>Perguntas frequentes</h3>
+            <details>
+                <summary class ="summary-cor1">Posso reservar o laboratório para estudar sozinho?</summary>
+                <p>Sim, desde que o laboratório esteja livre no horário escolhido e que a reserva siga a regra das 48 horas de antecedência.</p>
+            </details>
+            <details>
+                <summary class ="summary-cor1">E se eu precisar cancelar uma reserva?</summary>
+                <p>Avise a coordenação com pelo menos 24 horas de antecedência, para que o horário volte a ficar disponível para os outros alunos.</p>
+            </details>
+            <details>
+                <summary class ="summary-cor1">Quantos alunos cabem em cada laboratório?</summary>
+                <p>Depende da sala: <code>101</code> comporta 30 alunos, <code>102</code> comporta 25 e <code>103</code> comporta 40. Consulte a tabela de situação dos laboratórios.</p>
+            </details>
+        </section>
+
+        <!-- ==================== 6. FORMULÁRIO ==================== -->
+        <section id="consulta">
+            <h2>Consultar reserva</h2>
+            <p>Preencha os dados abaixo e clique em <strong>Buscar</strong>. Todos os campos marcados com <span class="obrigatorio">*</span> são obrigatórios.</p>
+
+            <form id="form-consulta" method="get">
+                <fieldset>
+                    <legend>Dados do responsável</legend>
+
+                    <div class="campo">
+                        <label for="nome">Nome do responsável <span class="obrigatorio">*</span></label>
+                        <input id="nome" name="nome" type="text" required>
+                    </div>
+
+                    <div class="linha-campos">
+                        <div class="campo">
+                            <label for="email">E-mail institucional <span class="obrigatorio">*</span></label>
+                            <input id="email" name="email" type="email" required>
+                        </div>
+                        <div class="campo">
+                            <label for="telefone">Telefone</label>
+                            <input id="telefone" name="telefone" type="tel" placeholder="(11) 90000-0000">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="curso">Curso</label>
+                        <select id="curso" name="curso">
+                            <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+                            <option value="cc">Ciência da Computação</option>
+                            <option value="si">Sistemas de Informação</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Dados da reserva</legend>
+
+                    <div class="linha-campos">
+                        <div class="campo">
+                            <label for="laboratorio">Laboratório <span class="obrigatorio">*</span></label>
+                            <select id="laboratorio" name="laboratorio" required>
+                                <option value="">Selecione...</option>
+                                <option value="101">Laboratório 101 (30 lugares)</option>
+                                <option value="102">Laboratório 102 (25 lugares)</option>
+                                <option value="103" disabled>Laboratório 103 (em manutenção)</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="data">Data da reserva <span class="obrigatorio">*</span></label>
+                            <input id="data" name="data" type="date" required>
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="quantidade-alunos">Quantidade de alunos <span class="obrigatorio">*</span></label>
+                        <input id="quantidade-alunos" name="quantidade-alunos" type="number" min="1" max="40" required>
+                    </div>
+
+                    <!-- Grupo de botões de opção (radio): todos com o mesmo name, só um pode ser marcado -->
+                    <div class="campo">
+                        <span class="rotulo-grupo">Horário <span class="obrigatorio">*</span></span>
+                        <label class="opcao"><input type="radio" name="horario" value="19h00 às 20h40" required> 19h00 às 20h40</label>
+                        <label class="opcao"><input type="radio" name="horario" value="20h50 às 22h30"> 20h50 às 22h30</label>
+                        <label class="opcao"><input type="radio" name="horario" value="19h00 às 22h30"> Os dois horários</label>
+                    </div>
+
+                    <!-- Grupo de caixas de seleção (checkbox): vários itens podem ser marcados -->
+                    <div class="campo">
+                        <span class="rotulo-grupo">Softwares necessários</span>
+                        <label class="opcao"><input type="checkbox" name="software" value="Visual Studio Code"> Visual Studio Code</label>
+                        <label class="opcao"><input type="checkbox" name="software" value="Node.js"> Node.js</label>
+                        <label class="opcao"><input type="checkbox" name="software" value="Git"> Git</label>
+                        <label class="opcao"><input type="checkbox" name="software" value="Google Chrome"> Google Chrome</label>
+                    </div>
+
+                    <div class="campo">
+                        <label for="observacoes">Observações</label>
+                        <textarea id="observacoes" name="observacoes" rows="4" maxlength="300" placeholder="Informe aqui qualquer necessidade especial (máximo de 300 caracteres)"></textarea>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Buscar</button>
+                <button type="reset" class="botao-secundario">Limpar</button>
+            </form>
+
+            <!-- Área onde o JavaScript escreve a resposta da consulta -->
+            <div id="resultado" class="resultado" aria-live="polite"></div>
+        </section>
+
+        <aside class="aviso-caixa">
+            <h2>Aviso</h2>
+            <p>Reservas devem ser solicitadas com 48 horas de antecedência.</p>
+            <p>O Laboratório 103 está em manutenção e não aceita reservas até nova ordem.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>CEUNSP - Curso de Front-End - 2026</p>
+        <p>Atendimento: segunda a sexta, das 18h às 22h30, e sábados, das 8h às 12h</p>
+        <p>Contato: laboratorios@example.com</p>
+    </footer>
+   <script src="./js/script.js"></script>
+</body>
+</html>
